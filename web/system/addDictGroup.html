@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidator-4.0.1.min.js"></script>
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidatorRegex.js"></script>
+		<link href="../lib/formvalidator4.0.1/style/validator.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+            $().ready(function(){
+                $("form").each(function(){
+                    $(this).attr("id", $(this).attr("name"))
+                });
+                
+                $.formValidator.initConfig({
+                    formID: "form_1",
+                    debug: false,
+                    onError: function(msg, obj, errorlist){
+                        alert(msg);
+                    },
+                    submitAfterAjaxPrompt: '有数据正在异步验证，请稍等...'
+                });
+                
+                $("#dictGroupCode").formValidator({
+                    onShow: "请填写字典组代码",
+                    onFocus: "字典组代码必须填写",
+                    onCorrect: "谢谢您的配合"
+                }).inputValidator({
+                    min: 0,
+                    onError: "你是不是忘记填写字典组代码了!"
+                });
+				
+                $("#dictGroupName").formValidator({
+                    onShow: "请填写字典组名称",
+                    onFocus: "字典组名称必须填写",
+                    onCorrect: "谢谢您的配合"
+                }).inputValidator({
+                    min: 0,
+                    onError: "你是不是忘记填写字典组名称了!"
+                });
+            });
+            
+        </script>
+		
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/popWin.css" media="all" />
+        <title></title>
+    </head>
+    <body>
+    	<form action="#" name="form_1">
+		<p><label>字典组代码：</label><input type="text" id="dictGroupCode" /><span id="dictGroupCodeTip"></span></p>
+		<p><label>字典组名称：</label><input type="text" id="dictGroupName" /><span id="dictGroupNameTip"></span></p>
+		<p class="aCenter">
+		<input type="submit" class="blueBtn bBtn spaceR10" value="保存" /><input type="button" class="blueBtn bBtn" onclick="hidepopWinFun(2,2);" value="取消" /></p>
+    	</form>
+    </body>
+</html>

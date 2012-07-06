@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+	</head>
+	<body>
+		<div class="formBox spaceT10" id="topBorder">
+					<div class="paramsBox">
+					
+					<div class="rel GU_wrap">
+					<label>集团客户</label>
+					<input type="text" class="GU_value" value="" />
+					<span class="GU_showSearchIcon inBlock"></span>
+					<div class="abs GU_box ">
+						<p class="GU_keyWork spaceL10 overflowDiv">
+						<label class="fLeft">集团客户</label>
+						<input type="text" class="GU_keyWork_input fLeft" /> 
+						<input type="submit" class='sBtn fLeft' value="搜索" /> 
+						<img id="GU_close" src="../skin/default/images/blank.gif">
+						</p>
+						<p class="GU_title title clear">
+						<span class="GU_title_sel">选择</span>
+						<span class="GU_title_name">集团客户</span>
+						<span class="GU_title_areaCode">地市区号</span>
+						<span class="GU_title_addre">联系地址</span></p>
+						<div class="GU_list">
+							<ul>
+								<li>
+								<input type="radio" name="GU_item" />
+								<span class="GU_title_name">1分公司</span>
+								<span class="GU_title_areaCode">020</span> 
+								<span class="GU_title_addre">中国移动广东分产品</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+					<span class="inBlock"><label>用户名称</label><input class="spaceL10" type="text" value="" /></span>
+					
+					<span class="rel">
+					<label>所属地市</label>
+					<span class="abs">
+					<select>
+						 <option value="" selected="selected"> </option>
+						 <option value="广东">广东</option>
+						 <option value="西安">西安</option>
+					</select></span>
+					<input type="text" value="" name="guest" class="abs selInput" />
+					</span>
+
+					</div>
+					<p class="btnBox">
+						<input type="submit" value="查询" class="sBtn" />
+						<input type="submit" value="删除" onclick="popFun('system/delPage.html',this,'确定删除选中的用户',4,3)" class="sBtn" />
+					</p>
+				</div>
+							
+				<table class="dataTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+				    <tr class="titleTR title">
+				    	<th onclick="selAllFun(this);"><input type="checkbox"/></th>
+				        <th><a href="#">用户名称</a></th>
+				        <th>归属地市</th>
+				        <th>所属集团</th>
+				        <th>状态</th>
+				        <th>操作</th>
+				    </tr>
+				    <tr>
+				    	<td><input type="checkbox" /></td>
+				        <td>admin1</td>
+				        <td>广州</td>
+				        <td>集团客户管理</td>
+				        <td>有效</td>
+				        <td><a class="operaIcon operaIcon_del" href="javascript:popFun('account/delUser_role.html',this,'确定删除选中的用户',4,3);">删除</a></td>
+				    </tr>
+					</table>
+					<p style="width:99.8%;" id="pageNav">共 25 条记录  每页显示 10 条  第 1/3 页 <a href="#">上一页</a> <a href="#">下一页</a>  <a href="#">首页</a> <a href="#">尾页</a> 转到 <input type="text" size="1" /> 页<img src="../skin/default/images/go.png" class="pointer goPageBtn"></p>
+					
+		
+		
+	</body>
+</html>		

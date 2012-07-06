@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="skin/default/css/style.css" media="all" />
+		<title>英学美达教育管理系统</title>
+	</head>
+	<body>
+	<div id="popWin"></div>
+	<div id="mask"></div>
+	<div id="wrapper">
+		<div id="hd">
+			<div id="top_hd">
+				<p><span>当前用户: admin</span> <a href="#">帮助</a> | <a href="login.html">退出</a></p>
+			</div>
+		</div>
+		
+		<div id="main">
+			<div id="left_m">
+				<div id="main_l_m">
+					<div class="meunBox_main_l">
+						<h4><span>系统管理</span></h4>
+							<ul>
+								<li><a class="cur" onclick="clickFun(this,'system/specialPage.html')">开设课程管理</a></li>
+								<li><a onclick="clickFun(this,'system/SWLog.html');">日志管理</a></li>
+								<li><a onclick="clickFun(this,'system/dictManage.html');">业务字典管理</a></li>
+							</ul>
+					</div>
+					
+					<div class="meunBox_main_l">
+						<h4><span>组织管理</span></h4>
+							<ul class="treeList">
+								<li><a onclick="clickFun(this,'account/accountManage.html');">教师管理</a></li>
+								<li><a onclick="clickFun(this,'account/customerManage.html');">课程顾问管理</a></li>
+								<li><span class="show hasNode">权限管理</span>
+									<ul><li><a onclick="clickFun(this,'account/menuManage.html')">菜单管理</a></li>
+  									<li><a onclick="clickFun(this,'account/roleManage.html')">角色管理</a></li>
+  									<li><a onclick="clickFun(this,'account/userManage.html');">用户管理</a></li></ul>
+								</li>
+							</ul>
+					</div>
+
+					<div class="meunBox_main_l">
+						<h4><span>销售管理</span></h4>
+							<ul>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">线索管理</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">回访跟踪</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">订单管理</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">促销管理</a></li>
+							</ul>
+					</div>
+
+					<div class="meunBox_main_l">
+						<h4><span>授课管理</span></h4>
+							<ul>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">上课预约</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">课程安排</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">课表生成</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">调课</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">签到签出</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">缴费管理</a></li>
+							</ul>
+					</div>
+
+					<div class="meunBox_main_l">
+						<h4><span>教学质量管理</span></h4>
+							<ul>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">教师备课</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">教学反馈</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">学员成绩</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">多元化激励</a></li>
+							</ul>
+					</div>
+																				
+					<div class="meunBox_main_l">
+						<h4><span>经营分析</span></h4>
+							<ul>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">经营计划</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">计划偏差分析</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">统计报表</a></li>
+								<li><a onclick="clickFun(this,'statistics/loginTotal.html');">财务报表</a></li>
+							</ul>
+					</div>
+					
+					<!-- end #main_l_m -->
+				</div>
+			</div>
+			<div id="right_m">
+				<iframe id="rIframe" height="680" onload="setSize(this);" name="rIframe" src="system/specialPage.html" marginWidth="0" marginHeight="0" frameBorder="0" scrolling="no"></iframe>
+				<!-- end #right_m -->
+			</div>
+		</div>
+		<script type="text/javascript">
+			(function(){
+				$("#main").css("width",$(window).width());
+			})(jQuery);
+		</script>
+		
+			<!-- end #wrapper -->
+    	</div>
+		<div id="footer">
+			<p><span class="fLeft">版权所有　英学美达教育咨询集团</span> <span class="fRight">为了您能获得最佳的显示效果，建议使用1024*768以上分辨率和<a href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie-8" target="_blank"> IE8 </a>或以上浏览器版本</span></p>
+		</div>
+    
+	</body>
+</html>

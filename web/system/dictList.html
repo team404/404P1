@@ -1,0 +1,170 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<script type="text/javascript" src="../skin/default/js/dtree.js"></script>
+		
+		<link media="all" href="../skin/default/css/reset.css" rel="stylesheet" type="text/css">
+		<link media="all" href="../skin/default/css/style.css" rel="stylesheet" type="text/css">
+		<link media="all" href="../skin/default/css/dtree.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+			<div class="left_r_m">
+			<h3 class="title">字典组</h3>
+                   
+			<div class="dtree" id="dtree"  width="100%" height="100%" style="overflow-y:auto;overflow-x:auto;"></div>
+			
+			<script type="text/javascript">
+						// wyl - 后续从字典表中读出
+						var json = '[{"displayOrder":0,"isLeaf":"0","menuId":"68","menuLevel":1,"menuTitle":"个性化页面状态","menuUrl":"22","parentsId":"0"},{"displayOrder":1,"isLeaf":"0","menuId":"1","menuLevel":1,"menuTitle":"用户类别","menuUrl":"dfgh","parentsId":"0"},{"displayOrder":2,"isLeaf":"0","menuId":"2","menuLevel":1,"menuTitle":"归属地市","menuUrl":"dsg","parentsId":"0"},{"displayOrder":3,"isLeaf":"0","menuId":"3","menuLevel":1,"menuTitle":"状态","menuUrl":"rett","parentsId":"0"}]';
+						d = new dTree('d');
+								//d.onNodeClickHandler=onNodeClickFunc;
+						d.add(0,-1,'字典组列表','javascript:void();','','right_r_m');
+						if("undefined" != typeof json && "null" != json)
+						{
+							var data = eval('('+json+')');
+							for(i=0;i<data.length;i++)
+							{
+								d.add(parseInt(data[i].menuId),parseInt(data[i].parentsId),data[i].menuTitle,'javascript:void(0);','','right_r_m','','','true',data[i]);
+
+							}
+						}
+						document.getElementById("dtree").innerHTML=d;
+						function showmenu(nodeid)
+						{
+							d.ss(nodeid);
+					    	if (window.parent==undefined) return;   
+					    	var doc=window.document;    
+							if (document==undefined) return;   
+							var info=d.aNodes[d.selectedNode].info;  
+							if(d.selectedNode == 0)
+							{
+								popMenus(itemMenus,120,'100');
+							}
+							else
+							{
+								if(1 == info.isLeaf)
+							    {
+							    	popMenus(itemMenus,120,'010');
+							    }
+							    else
+							    {
+							    	popMenus(itemMenus,120,'111');
+							    }
+							}
+							event.returnValue=false; 
+							event.cancelBubble=true; 
+							return false; 
+						}
+
+
+							/** 
+							*显示弹出菜单 
+							*menuDiv:右键菜单的内容 
+							*width: 行显示的宽度 
+							*rowControlString:行控制字符串，0表示不显示，1表示显示，如“101”，则表示第1、3行显示，第2行不显示 
+							*node:所选中节点信息
+							*/ 
+							
+						function popMenus(menuDiv,width,rowControlString)
+						{
+							//创建弹出菜单 
+						    var pop=window.createPopup(); 
+						    var stringbuild = "<body><style>*{padding:0;margin:0;}.j-m-mpanel {font-size:12px;background: #F0F0F0 url(../images/menu_bg.gif) left repeat-y;border: 1px solid #718BB7;	padding: 2px 0;	position: absolute;	z-index: 99997;}.j-m-split {	height: 6px;	background: url(../images/m_splitLine.gif) center repeat-x;	font-size: 0px;	margin: 0 2px;}.j-m-item, .j-m-ifocus, .j-m-idisable {font-size:12px;	width: 100%;	padding: 4px 3px;	margin: 0 2px;	cursor: pointer;}.j-m-ibody, .j-m-arrow {	width: 100%;	overflow: hidden;	text-overflow: ellipsis;}.j-m-arrow {	background: url(../images/m_arrow.gif) right  no-repeat;	margin-right: 1px;}.j-m-item img, .j-m-ifocus img, .j-m-idisable img {	margin-right: 7px;}.j-m-ifocus {	background: url(../images/m_item.gif);	border: 1px solid #AACCF6;	padding: 3px 2px;}.j-m-idisable img {	visibility:hidden;}.j-m-item span{font-size:12px;}</style>";
+
+						    //设置弹出菜单的内容 
+						    stringbuild +=menuDiv.innerHTML+"</body>";
+						    pop.document.body.innerHTML=stringbuild; 
+							var popBody= pop.document.body;
+						    var rowObjs=pop.document.body.children[1].children;
+							 
+						    //获得弹出菜单的行数 
+						    var rowCount=rowObjs.length; 
+
+						    //循环设置每行的属性 
+						    for(var i=0;i<rowObjs.length;i++) 
+						    {
+						        rowObjs[i].onmouseover=function() 
+						        { 
+						            this.className="j-m-ifocus";
+						        } 
+
+						        //设置鼠标滑出该行时的效果 
+						        rowObjs[i].onmouseout=function()
+						        { 
+						           this.className="j-m-item";
+					        	}
+							    var hide=rowControlString.charAt(i)!='1';
+							    if(hide)
+							    { 
+							    //rowObjs[i].className="j-m-idisable";
+							    	rowObjs[i].disabled = true;
+							        rowObjs[i].onmouseout = function(){};
+							        rowObjs[i].onmouseover=function(){};
+							    } 
+							} 
+							
+							//屏蔽菜单的菜单 
+							pop.document.oncontextmenu=function() 
+							{ 
+							    return false; 
+							} 
+							//选择右键菜单的一项后，菜单隐藏 
+							pop.document.onclick=function() 
+							{ 
+							    pop.hide(); 
+							} 
+							
+							//显示菜单 
+							pop.show(event.clientX-1,event.clientY,width,(rowObjs.length+1)*30,document.body); 
+							return true;
+						}
+							
+						//新增子菜单
+						function addNode()
+						{
+							if (window.parent==undefined) return;   
+							var doc=window.document;    
+							if (document==undefined) return;   
+							var info=d.aNodes[d.selectedNode].info;
+							popFun('system/addDictGroup.html',this,'添加字典组',3,2)						
+						}
+						
+						//删除菜单
+						function delNode()
+						{
+							if (window.parent==undefined) return;   
+							var doc=window.document;    
+							if (document==undefined) return;   
+							var info=d.aNodes[d.selectedNode].info;  
+							    
+							popFun('system/delDict.html',this,'确定删除选中的字典组',4,2)
+									  
+						}
+						
+							//更新菜单
+						function updateNode()
+						{
+							if (window.parent==undefined) return;   
+							var doc=window.document;    
+							if (document==undefined) return;   
+							var info=d.aNodes[d.selectedNode].info;  
+							    
+							popFun('system/editDictGroup.html',this,'修改字典组',3,2)
+						}
+				</script>
+		
+				<!-- 右键开始 --> 
+				<div id="itemMenus" style ="display:none">
+					<div  class="j-m-mpanel"> 
+						<div onclick="parent.addNode();" class="j-m-item" unselectable=on><nobr unselectable=on><img src='../skin/default/images/dTreeImg/folder.gif' align='absmiddle'  /><span unselectable=on style="font-size: 12px">新增子字典组</span></nobr></div>
+				    	<div onclick="parent.delNode();" class="j-m-item" unselectable=on><nobr unselectable=on><img src='../skin/default/images/dTreeImg/trash.gif' align='absmiddle'/><span unselectable=on style="font-size: 12px">删除字典组</span></nobr></div>
+				    	<div onclick="parent.updateNode();" class="j-m-item" unselectable=on><nobr unselectable=on><img src='../skin/default/images/dTreeImg/question.gif' align='absmiddle'/><span unselectable=on style="font-size: 12px">修改字典组</span></nobr></div>
+					</div> 
+				</div>
+				<!-- 右键结束 --> 
+				   
+				</div>	
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+	</head>
+	<body>
+	<h2 id="title_right_m">集团客户管理</h2>
+				
+				<div class="formBox">
+				<div class="paramsBox">
+					<div class="rel GU_wrap">
+					<label>集团客户</label>
+					<input type="text" class="GU_value" value="" />
+					<span class="GU_showSearchIcon inBlock"></span>
+					<div class="abs GU_box ">
+						<p class="GU_keyWork spaceL10 overflowDiv">
+						<label class="fLeft">集团客户</label>
+						<input type="text" class="GU_keyWork_input fLeft" /> 
+						<input type="submit" class='sBtn fLeft' value="搜索" /> 
+						<img id="GU_close" src="../skin/default/images/blank.gif">
+						</p>
+						<p class="GU_title title clear">
+						<span class="GU_title_sel">选择</span>
+						<span class="GU_title_name">集团客户</span>
+						<span class="GU_title_areaCode">地市区号</span>
+						<span class="GU_title_addre">联系地址</span></p>
+						<div class="GU_list">
+							<ul>
+								<li>
+								<input type="radio" name="GU_item" />
+								<span class="GU_title_name">1分公司</span>
+								<span class="GU_title_areaCode">020</span> 
+								<span class="GU_title_addre">中国移动广东分产品</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+					
+					<label>集团编号</label><input type="text" />
+					
+					</div>
+					
+					<p class="btnBox">
+						<input type="submit" class="sBtn" value="查询" />
+						<input type="submit" class="sBtn" onclick="popFun('account/addCustomer.html',this,'新增客户',1,1)" value="新增">
+						<input type="submit" class="sBtn" onclick="popFun('account/delCustomer.html',this,'确定删除选中的客户',4,1)" value="删除">
+					</p>
+				</div>
+				
+				<table class="dataTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="titleTR title">
+    	<th onclick="selAllFun(this);"><input type="checkbox"/></th>
+        <th><a href="javascript:void(0);">所属地市</a></th>
+        <th><a href="javascript:void(0);">集团编号</a></th>
+        <th>客户名称</th>
+        <th>客户地址</th>
+        <th>联系人</th>
+        <th>联系电话</th>
+        <th>联系地址</th>
+		<th>操作</th>
+    </tr>
+    <tr>
+    	<td><input type="checkbox" /></td>
+        <td>广州</td>
+        <td>7502422630289</td>
+        <td>中国移动</td>
+        <td>客户地址2111</td>
+        <td>刘某某</td>
+        <td>13685474512</td>
+        <td>客户地址2111</td>
+		<td><a href="javascript:popFun('account/editCustomer.html',this,'修改客户信息',2);" class="operaIcon operaIcon_edit">修改</a> <a href="javascript:popFun('account/delProd.html',this,'确定删除选中的客户',4);"class="operaIcon operaIcon_del">删除</a> <a class="operaIcon operaIcon_role pointer" onclick="clickFun2(this,'account/userManage_customer.html');" >管理用户</a></td>
+    </tr>
+</table>
+				
+	<p id="pageNav">共 25 条记录  每页显示 10 条  第 1/3 页 <a href="#">上一页</a> <a href="#">下一页</a>  <a href="#">首页</a> <a href="#">尾页</a> 转到 <input type="text" size="1" /> 页  <img class="pointer goPageBtn" src="../skin/default/images/go.png" /></p>	
+				</body>
+</html>		

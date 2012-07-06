@@ -1,0 +1,798 @@
+body{
+	height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+	color:#074385;
+	font-size:12px;
+	height-line:180%;
+}
+a{
+	text-decoration:none;
+	color:#074385;
+}
+a:hover{
+	color:#3993F4;
+	text-decoration:underline;
+}
+#wrapper{
+}
+/*
+common style
+*/
+input.sBtn{
+	cursor:pointer;
+	width:68px;
+	height:31px;
+	_height:30px;
+	line-height:31px;
+	vertical-align:middle;
+	text-align:center;
+	color:white;
+	border:none;
+	background:transparent url("../images/btn_bg.png") no-repeat 0 0;
+}
+input.sBtnHover{
+	background-position:0 100%;
+	_background-position:0 97%;
+}
+.title{
+	background: url("../images/tableTitle_bg.png") repeat-x scroll left bottom transparent;
+    font-size: 14px;
+    line-height: 34px;
+    vertical-align: middle;
+	text-indent:15px;
+	border-bottom:1px solid #4E8FD1;
+}
+.blueBorder{
+	border:1px solid #4E8FD1;
+}
+.spaceT10{
+	margin-top:10px;
+}
+.spaceR10{
+	margin-right:10px;
+}
+.spaceL10{
+	margin-left:10px;
+}
+.spaceB10{
+	margin-bottom:10px;
+}
+.abs{
+	position:absolute;
+}
+.rel{
+	position:relative;
+}
+.fLeft{
+	float:left;
+}
+.fRight{
+	float:right;
+}
+.overflowDiv{
+	overflow:hidden;
+}
+.block{
+	display:block;
+}
+.inBlock{
+	display:inline-block;
+}
+.clear{
+	clear:both;
+}
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+.pointer{
+	cursor:pointer;
+}
+.treeList{
+	/*还没有很好的方法表现树的层次感
+background:url("../images/dotLine_root.gif") no-repeat scroll 6px -855px transparent;
+	_background-position:11px --855px;
+*/
+}
+.treeList ul{
+	margin-left:6px;
+}
+.treeList ul ul{
+	margin-left:20px;
+}
+.treeList li {
+    line-height: 200%;
+}
+.treeList span{
+    background: url("../images/tableAllIcon.gif") no-repeat scroll 0 6px transparent;
+    display: inline-block;
+    padding: 0 0 0 18px;
+}
+.treeList span.hasNode{
+	background-image:url("../images/menuTreeIcon.png");
+	background-repeat:no-repeat;
+	background-position:5% 195%;
+}
+.treeList span.hasNodehide{
+	background-position:5% -135%;
+}
+.treeList li ul li img{
+	background-image:url("../images/dotLine_item.png");
+	background-repeat:no-repeat;
+	background-position:0px -5px;
+	_background-position:5px -5px;
+	width:16px;
+	height:16px;
+}
+.treeList li input{
+	margin-right:5px;
+	vertical-align:middle;
+}
+.aCenter{
+	text-align:center;
+}
+.aRight{
+	text-align:right;
+}
+.bold{
+	font-weight:bold;
+}
+.red{
+	color:red;
+}
+.size14{
+	font-size:14px;
+}
+/*
+ͷ��
+*/
+#hd{
+	width:100%;
+	padding-bottom:7px;
+	background:url("../images/line_hd.png") repeat-x left bottom;
+}
+#hd #top_hd{
+	height:90px;
+	background:#9AC3EC url("../images/hd_bg.jpg") no-repeat left center;
+}
+#hd #top_hd p{
+	width:227px;
+	height:30px;
+	float:right;
+	margin:10px;
+	line-height:30px;
+	text-align:center;
+	background:#9AC3EC url("../images/topMenuBg.jpg") no-repeat left center;
+}
+#main{
+	width:100%;
+	padding-bottom:15px;
+	background:url("../images/lfet_bg_repeat.png") repeat-y left top;
+}
+/*
+	begin #left_m 
+*/
+
+#left_m{
+	margin-right:10px;
+	width:197px;
+	float:left;
+	min-height:600px;
+	_height:600px;
+	background:url("../images/lfet_bg_repeat.png") repeat-y left top;
+}
+#left_m #main_l_m{
+	float:left;
+	width:190px;
+	padding:15px 0px;
+	min-height:600px;
+	_height:600px;
+	background:transparent url("../images/left_bg.jpg") no-repeat left bottom;
+}
+.meunBox_main_l{
+	padding:0;
+	margin:0 15px 15px;
+	background-color:#EBF3FA;
+}
+.meunBox_main_l h4{
+	height:30px;
+	line-height:30px;
+	cursor:pointer;
+	background:url("../images/menuBg.png") repeat-x left center; 
+}
+.meunBox_main_l h4 span{
+	font-size:16px;
+	padding-left:20px;
+	margin:0 0 0 11px;
+	background:url("../images/meunIcon_show.png") no-repeat 0 50%; 
+}
+.meunBox_main_l h4.hide span{
+	background:url("../images/meunIcon_hide.png") no-repeat 0 50%; 
+}
+.meunBox_main_l ul{
+	margin:10px 0 0 10px;
+	padding:0 0 10px;
+	background:none;
+}
+.meunBox_main_l ul.hide{
+	display:none;
+}
+.meunBox_main_l ul li{
+	line-height:28px;
+	font-size:12px;
+}
+.meunBox_main_l ul li span{
+	padding:0 0 0 20px;
+	cursor:pointer;
+	background:url("../images/subMenuIcon.png") no-repeat 0 30%;
+}
+.meunBox_main_l ul li span.show{
+	background:url("../images/subMenuIcon_show.png") no-repeat 0 30%;
+}
+.meunBox_main_l ul li span.hasNodehide{
+	background:url("../images/subMenuIcon.png") no-repeat 0 30%;
+}
+.meunBox_main_l ul li a{
+	padding:0 0 0 20px;
+	background:url("../images/subMenuIcon.png") no-repeat 0 30%;
+}
+.meunBox_main_l ul li a.cur{
+	color:#184670;
+	font-weight:bold;
+	background:url("../images/subMenuIcon_cur.png") no-repeat 0 30%;
+}
+.meunBox_main_l ul li a{
+	cursor:pointer;
+}
+.meunBox_main_l ul li ul{
+	margin:0 0 0 18px;
+}
+
+/* begin #right_m */
+#right_m{
+    margin-left: 207px;
+    padding-top: 10px;
+}
+#title_right_m{
+	height:26px;
+	line-height:26px;
+	text-indent:15px;
+	font-size:14px;
+	font-weight:bold;
+	color:white;
+	border-bottom:2px solid  #4E8FD1;
+	background:url("../images/curTab_bg.png") no-repeat left center;
+}
+.formBox{
+	width:99.8%;
+	*width:100%;
+	padding:15px 0;
+	border:1px solid #4E8FD1;
+}
+.formBoxNoTopBorder{
+	border-top:none;
+}
+.formBox .paramsBox{
+	margin:0 10px 15px 10px;
+}
+.formBox label{
+	display:inline-block;
+	vertical-align:midden;
+}
+.formBox .paramsBox input,.formBox .paramsBox span.rel{
+	margin:0 5px 0 4px;
+}
+.formBox .paramsBox span.rel{
+	display: inline-block;
+    width: 190px;
+    *height:28px;
+    *line-height:26px;
+}
+.formBox .btnBox{
+	text-align:right;
+	margin:0 15px 0 0;
+}
+.formBox .paramsBox span.rel span{
+	margin-left: 102px;
+    top: -2px;
+    width: 20px;
+	*margin-left: 115px;
+    *top:3px;
+}
+.formBox .paramsBox span.rel select{
+	margin-left: -100px;
+	*margin-left: -116px;
+    width: 132px;
+    *width: 136px;
+}
+.selInput{
+	left:48px;
+	border:none;
+	*border:1px solid gray;
+	*border-right:none;
+	background:white;
+    position: absolute;
+    top: -1px;
+    *top: 3px;
+    width: 112px;
+    *width: 120px;
+    *display:inline-block;
+    *height:21px;
+}
+/*
+begin dataTable
+*/
+.dataTable,.prodTable{
+	margin:10px 0 0;
+	border:1px solid #4E8FD1;
+	border-collapse:collapse;
+}
+.dataTable tr,.prodTable tr{
+	height:28px;
+	line-height:28px;
+}
+.dataTable tr td,.prodTable tr td{
+	border-top:1px solid #4E8FD1;
+}
+.dataTable tr.titleTR{
+	text-indent:0px;
+	border-bottom:none;
+	height:34px;
+	line-height:34px;
+}
+.dataTable tr.titleTR th a{
+	padding:0 0 0 18px;
+	background-repeat:no-repeat;
+	background-position:0 40%;
+	text-decoration:underline;
+}
+.aSort{
+	background-image:url("../images/aSortIcon.gif");
+}
+.dSort{
+	background-image:url("../images/dSortIcon.gif");
+}
+.dataTable tr.titleTR th,.dataTable tr td{
+	font-size:12px;
+		text-align:center;
+}
+#pageNav{
+	text-align:center;
+	margin:10px 0 0;
+	padding:3px 0; 
+	border:1px solid #4E8FD1;
+	background-color:#EBF3FA;
+	clear:both;
+	display:inline-block;
+	width:100%;
+}
+#pageNav input{
+	width:20px;
+}
+.goPageBtn{
+    color: white;
+    padding: 1px 3px;
+	vertical-align:bottom;
+}
+#statistics{
+	text-align:center;
+	margin:10px 0 0;
+	padding:3px 0; 
+	background-color:#DEEEFC;
+	clear:both;
+	display:inline-block;
+	width:100%;
+}
+#statistics em{
+	font-size:16px;
+}
+.aSort{
+	background-image:url("../images/aSortIcon.gif");
+}
+.dSort{
+	background-image:url("../images/dSortIcon.gif");
+}
+.trEven{
+	background:#F6FAFF;
+}
+.trHover{
+	background:#D7E9FF;
+}
+.operaIcon{
+	background-image: url("../images/tableAllIcon.gif");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 17px;
+    line-height: 17px;
+    padding: 0 0 0 17px;
+}
+.operaIcon_info{
+	background-position:0 0px;
+}
+.operaIcon_edit{
+	background-position:0 -17px;
+}
+.operaIcon_del{
+	background-position:0 -53px;
+}
+.operaIcon_role{
+	background-position:0 -36px;
+}
+.operaIcon_reset{
+	background-position:0 -72px;
+}
+.operaIcon_info:hover{
+	background-position:0 -147px;
+}
+.operaIcon_edit:hover{
+	background-position:0 -127px;
+}
+.operaIcon_del:hover{
+	background-position:0 -108px;
+}
+.operaIcon_role:hover{
+	background-position:0 -91px;
+}
+.operaIcon_reset:hover{
+	background-position:0 -165px;
+}
+/*
+�����������Ҳ���
+*/
+#left_r_m{
+	float:left;
+}	
+.left_r_m{
+	width:250px;
+	min-height:548px;
+	_height:548px;
+	float:left;
+	margin-top:10px;
+	margin-right:10px;
+	border:1px solid #4E8FD1;
+}
+#right_r_m{
+	float:left;
+}
+.right_r_m{
+	
+}
+.right_r_m .dataTable{
+	float:left;
+}
+
+/* �ֵ������  */
+#dictListWrap{
+	width:98%;
+	*width:99%;
+	margin:0 0 0 8px;
+}
+#dictListWrap #pageNav{
+	margin-bottom:10px;
+}
+/*
+roleManage
+*/
+#tabTit{
+	width:100%;
+}
+#tabTit li{
+	cursor:pointer;
+	float:left;
+	width:88px;
+	height:25px;
+	line-height:22px;
+	border:none;
+	text-align:center;
+	background:url("../images/roleManageTabBg.jpg") no-repeat left bottom;
+}
+#tabTit li.cur,#tabTit li.hover{
+	background:url("../images/roleManageTabBg_cur.png") no-repeat left bottom;
+	border:none;
+	color:white;
+}
+#tabWrap{
+	width:99%;
+	*width:100%;
+	_width:99%;
+	height:522px;
+	border:1px solid #4E8FD1;
+	border-top-width:2px;
+}
+.tabBox{
+	width:100%;
+}
+.tabBox iframe{
+	margin:0 8px;
+	width:98%;
+	*width:100%;
+}
+#roleInfo{
+	width:55%;
+	margin:20px auto 0;
+}
+#roleInfo p{
+	margin:0 0 10px;
+}
+#roleInfo p label{
+    display: inline-block;
+    margin-right: 5px;
+    text-align: right;
+    vertical-align: top;
+    width: 116px;
+}
+.PermInfo{
+	margin:20px 0 0 200px;
+}
+/* 弹窗相关 */
+#mask{
+	display:none;
+	background:black;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+	filter:alpha(opacity=0);
+	opacity:0;
+}
+#popWin{
+	position:absolute;
+	background-color:white;
+	z-index:1000;
+	border:1px solid blue;
+	display:none;
+	filter:alpha(opacity=0);
+	opacity:0;
+	padding-bottom:15px;
+}
+#popWin h2{
+	height:34px;
+}
+#popWin h2 a{
+	float:right;
+	margin:8px 9px 0 0;
+	display:inline-block;
+	height:20px;
+	width:20px;
+	background:url("../images/closeIcon.png") no-repeat center;
+}
+#popWin iframe{
+	/*
+filter:alpha(opacity=0);
+	opacity:0;
+*/
+}
+/* infoFormBox */
+.infoFormBox{
+ 	margin-left:120px;
+}
+.infoFormBox label{
+ 	display:inline-block;
+ 	width:85px;
+ 	text-align:right;
+}
+
+/* 单独的 */
+.assignTitle{
+	background-color:#BDD7EE;
+    border: 1px solid #4E8FD1;
+    border-bottom:none;
+    clear: both;
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 3px 0;
+    text-align: center;
+    width: 99.8%;/* ff中100%无法显示完整 */
+    *width: 100%;
+    font-size:14px;
+    font-weight:bold;
+}
+.noMargin{
+	margin:0;
+}
+.labelStyle{
+	display:inline-block;
+ 	width:85px;
+ 	text-align:right;
+}
+.ui-datepicker-trigger{
+	border:none;
+	background:none;
+	vertical-align:bottom;
+}
+#ui-datepicker-div{
+	width:18em;
+}
+.formBox .paramsBox span.statParam{
+	
+}
+.formBox .paramsBox span.statParam label{
+	width:68px;
+	text-align:right;
+}
+.formBox .paramsBox span.statParam span{
+	
+}
+.formBox .paramsBox span.statParam input{
+	left:68px;
+}
+#remarksP span{
+	margin:3px 0 0 130px;
+}
+/*
+begin #footer
+*/
+#footer{
+	clear:both;
+	border-top:2px solid #4E8FD1;
+	background:url("../images/footer_bg.jpg") repeat-x left top;
+	height:36px;
+}
+#footer p{
+	padding-left:146px;
+	height:36px;
+	padding-top:6px;
+	width:87%;
+	*width:97%;
+	background:url("../images/footer_logo.jpg") no-repeat left top;	
+}
+.excPic{
+	vertical-align:bottom;
+}
+/* loginPage style */
+#loginBody{
+	background:#97c1e9 url("../images/login_bg.jpg") no-repeat 50% 0;
+	text-align:center;
+}
+#loginDiv{
+	font-size:14px;
+	width:960px;
+	height:500px;
+	margin:0 auto 0;
+	padding-top:295px;
+	text-align:left;
+}
+#loginDiv p{
+	padding-left:37px;
+}
+#loginDiv input{
+	background-color: transparent;
+    border: medium none;
+	vertical-align: middle;
+	height:49px;
+	line-height:49px;
+	width:193px;
+	margin-left:15px;
+}
+#loginDiv .txtInput span{
+	display:inline-block;
+    height: 49px;
+    line-height: 49px;
+	width:247px;
+	background-repeat:no-repeat;
+	background-position:0 2px;
+	text-align:left;
+}
+#loginDiv .loginBtn input{
+    height: 50px;
+    line-height: 50px;
+    width: 105px;
+	background-repeat:no-repeat;
+	background-position:0 0;
+}
+#loginDiv .txtInput span.hover{
+	background-position:0 -49px;
+}
+#loginDiv .loginBtn input.hover{
+	background-position:0 -50px;
+}
+#loginDiv label{
+	height:49px;
+	line-height:49px;
+}
+#userInput{
+	background-image:url("../images/login_userBg.jpg");
+}
+#passInput{
+	background-image:url("../images/login_passBg.jpg");
+}
+.loginBtn input{
+	background-image:url("../images/login_enter.jpg");
+}
+/* 集团客户搜索框 */
+.GU_wrap{
+	float:left;
+	margin-right:8px;
+}
+.GU_wrap label{
+	vertical-align: top;
+}
+.GU_box{
+	background:#ffffff;
+	border:2px solid #4E8FD1;
+	width:430px;
+	height:210px;
+	left:0;
+	top:22px;
+	display:none;
+	padding:2px 0px;
+}
+.GU_keyWork label{
+	vertical-align:middle;
+	height:28px;
+	line-height:28px;
+}
+.GU_input{
+	width:126px;
+	height:18px;
+	border:1px solid #4E8FD1;
+	padding-left:3px;
+	cursor:pointer;
+}
+.GU_title{
+	background-position: 0 -3px;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 3px;
+    text-indent: 0;
+}
+.GU_title span,.GU_list li span{
+	display:inline-block;
+	text-align:center;
+}
+.GU_title_sel,GU_list li input{
+	width:30px;
+}
+.GU_title_name {
+    width: 145px;
+}
+.GU_title_areaCode {
+    width: 58px;
+}
+.GU_title_addre {
+    width: 165px;
+}
+.GU_list {
+    height: 180px;
+	overflow:auto;
+}
+.GU_list li{
+	height:22px;
+	line-height:22px;
+	border-bottom:1px dashed #D3DDEA;
+}
+.GU_list li input{
+	vertical-align: middle;
+}
+.formBox .paramsBox .GU_keyWork_input{
+	height: 22px;
+    line-height: 22px;
+    width: 151px;
+	margin-top:3px;
+}
+#GU_close{
+	background: url("../images/closeIcon.png") no-repeat scroll center center transparent;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+	cursor:pointer;
+	float:right;
+	margin:8px 8px 0 0;
+}
+.GU_showSearchIcon{
+	background:url("../images/showSearchIcon.png") no-repeat center;
+    height: 15px;
+    width: 15px;
+	vertical-align:top;
+}
+.formBox .paramsBox input.GU_value{
+	margin-right:0;
+}

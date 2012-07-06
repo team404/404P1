@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/popWin.css" media="all" />
+        <title></title>
+    </head>
+    <body>
+    	<form action="#">
+		<div class="rel GU_wrap spaceB10">
+					<label>集团客户</label>
+					<span class="GU_input inBlock">集团客户1</span>
+					<input type="hidden" value="" name="guest" id="groupUser" />
+					<div class="abs GU_box ">
+						<p class="GU_keyWork spaceL10 overflowDiv">
+						<label class="fLeft">集团客户</label>
+						<input type="text" class="GU_keyWork_input fLeft" /> 
+						<input type="submit" class='sBtn fLeft' value="搜索" /> 
+						<img id="GU_close" src="../skin/default/images/blank.gif">
+						</p>
+						<p class="GU_title title clear">
+						<span class="GU_title_sel">选择</span>
+						<span class="GU_title_name">集团客户</span>
+						<span class="GU_title_areaCode">地市区号</span>
+						<span class="GU_title_addre">联系地址</span></p>
+						<div class="GU_list">
+							<ul>
+								<li>
+								<input type="radio" name="GU_item" />
+								<span class="GU_title_name">1分公司</span>
+								<span class="GU_title_areaCode">020</span> 
+								<span class="GU_title_addre">中国移动广东分产品</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<span id="groupUserTip"></span>
+			</div>	
+			
+		<p class="clear"><label>集团产品</label><select id="gronpPord">
+			<option selected="selected">--请选择--</option>
+			<option>集团客户2集团客2222</option>
+			<option>集团客户2集团客333</option>
+		</select><span id="gronpPordTip"></span></p>
+    	<p><label>SSID：</label><input type="text" value="CMCC" /></p>
+		<p><label>描述：</label><textarea  rows="6" cols="28">7天酒店集团天河区01分店</textarea></p>
+		<p class="aCenter">
+		<input type="submit" class="blueBtn bBtn spaceR10" value="确定" /><input type="button" class="blueBtn bBtn" onclick="hidepopWinFun(2,1);" value="取消" /></p>
+    	</form>
+    </body>
+</html>

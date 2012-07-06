@@ -1,0 +1,86 @@
+<html lang="zh-CN">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script language="javascript" type="text/javascript" src="../lib/My97DatePicker/WdatePicker.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+	</head>
+	<body>
+	<h2 id="title_right_m">上网帐号管理</h2>
+				
+				<div class="formBox">
+					<p class="paramsBox">
+						
+					<span class="rel" id="accNameSelBox">
+					<label>集团产品</label>
+					<span class="abs">
+					<select>
+						 <option value="" selected="selected"> </option>
+						 <option value="中国移动广东分公司">中国移动广东分公司</option>
+						 <option value="中国移动西安分公司">中国移动西安分公司</option>
+					</select></span>
+					<input type="text" value="" name="guest" class="abs selInput" />
+					</span>
+					
+					<label>账号</label><input type="text" value="" />
+					
+					<span class="spaceL10 spaceR10"><label>状态</label>
+					<select>
+						 <option value="" selected="selected">--请选择--</option>
+						 <option value="有效">有效</option>
+						 <option value="无效">无效</option>
+					</select></span>
+					
+					<span class="inBlock  spaceT10">
+					<label>开户日期</label><input class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" />
+					 至 <input class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"  /></span>
+					</p>
+					
+					<p class="btnBox">
+						<input type="submit" value="查询" class="sBtn" />
+						<input type="submit" value="导入" onclick="popFun('account/importAccount.html',this,'导入',2,1)" class="sBtn" />
+						<input type="submit" value="新增" onclick="popFun('account/addAccount.html',this,'新增账号',2,1)" class="sBtn" />
+						<input type="submit" value="删除" onclick="popFun('system/delPage.html',this,'确定删除选中的账号',4,1)" class="sBtn" />
+					</p>
+				</div>
+				
+	<table class="dataTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="titleTR title">
+        <th onclick="selAllFun(this);"><input type="checkbox"/></th>
+        <th>集团产品</th>
+        <th><a href="javascript:void(0);">账号</a></th>
+        <th>手机号码</th>
+        <th>状态</th>
+        <th>开户日期</th>
+        <th>分配时间</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>星巴克天河城01</td>
+        <td>2312</td>
+        <td>13685745874</td>
+        <td>未分配</td>
+        <td>2011-04-20</td>
+        <td>2011-04-20 14:20</td>
+		<td><a class="operaIcon operaIcon_info" href="javascript:popFun('account/accountInfo.html',this,'账号详细',2,1);">详细</a>  <a href="javascript:popFun('account/editAccount.html',this,'修改账号',2,1);" class="operaIcon operaIcon_edit">修改</a>  <a href="javascript:popFun('system/delPage.html',this,'确定删除选中的账号',4,1);"class="operaIcon operaIcon_del">删除</a>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"/></td>
+        <td>星巴克天河城01</td>
+        <td>2312</td>
+        <td>13685745874</td>
+        <td>未分配</td>
+        <td>2011-04-20</td>
+        <td>2011-04-20 14:20</td>
+		<td><a class="operaIcon operaIcon_info" href="javascript:popFun('account/accountInfo.html',this,'账号详细',2,1);">详细</a>  <a href="javascript:popFun('account/editAccount.html',this,'修改账号',2,1);" class="operaIcon operaIcon_edit">修改</a>  <a href="javascript:popFun('system/delPage.html',this,'确定删除选中的账号',4,1);"class="operaIcon operaIcon_del">删除</a>
+        </td>
+    </tr>
+</table>
+				
+	<p id="pageNav">共 25 条记录  每页显示 10 条  第 1/3 页 <a href="#">上一页</a> <a href="#">下一页</a>  <a href="#">首页</a> <a href="#">尾页</a> 转到 <input type="text" size="1" /> 页  <img class="pointer goPageBtn" src="../skin/default/images/go.png" /></p>	
+				</body>
+</html>		

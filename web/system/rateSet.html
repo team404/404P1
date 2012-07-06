@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidator-4.0.1.min.js"></script>
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidatorRegex.js"></script>
+		<link href="../lib/formvalidator4.0.1/style/validator.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+            $().ready(function(){
+                $("form").each(function(){
+                    $(this).attr("id", $(this).attr("name"))
+                });
+                
+                $.formValidator.initConfig({
+                    formID: "form_1",
+                    debug: false,
+                    onError: function(msg, obj, errorlist){
+                        alert(msg);
+                    },
+                    submitAfterAjaxPrompt: '有数据正在异步验证，请稍等...'
+                });
+                
+				
+                $("#rate").formValidator({
+                    onShow: "单位为：元/分",
+                    onFocus: "单位为：元/分,必须是数字",
+                    onCorrect: "谢谢您的配合"
+                });
+                
+            });
+            
+        </script>
+		
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/popWin.css" media="all" />
+        <title></title>
+    </head>
+    <body>
+    	<form action="#" name="form_1">
+    	<p><label>费率</label><input type="text" id="rate" /><span id="rateTip"></span></p>
+		
+		<p class="aCenter">
+		<input type="submit" class="blueBtn bBtn spaceR10" value="保存" /><input type="button" class="blueBtn bBtn" onclick="hidepopWinFun(2,1);" value="取消" /></p>
+    	</form>
+    </body>
+</html>

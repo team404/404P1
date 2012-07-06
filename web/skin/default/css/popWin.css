@@ -1,0 +1,38 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	height: 100%;
+    overflow: hidden;
+	color:#074385;
+	font-size:12px;
+	height-line:180%;
+	margin:20px 0;
+}
+p{
+	margin:0 0 8px;
+	line-height:24px;
+}
+.btnBox{
+	height:38px;
+}
+label{
+	display: inline-block;
+    margin: 0 8px 0 0;
+    text-align: right;
+    vertical-align: top;
+    width: 122px;
+}
+input{
+	height:20px;
+	line-height:20px;
+}
+.GU_box{
+	margin-left:8px;	
+}
+.GU_wrap label {
+    margin: 0;
+    vertical-align: top;
+    width: 126px;
+}

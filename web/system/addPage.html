@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidator-4.0.1.min.js"></script>
+		<script type="text/javascript" src="../lib/formvalidator4.0.1/formValidatorRegex.js"></script>
+		<link href="../lib/formvalidator4.0.1/style/validator.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+            $(function(){
+                $("form").each(function(){
+                    $(this).attr("id", $(this).attr("name"))
+                });
+                
+                $.formValidator.initConfig({
+                    formID: "form_1",
+                    debug: false,
+                    onError: function(msg, obj, errorlist){
+                        alert(msg);
+                    },
+                    submitAfterAjaxPrompt: '有数据正在异步验证，请稍等...'
+                });
+                
+                $("#groupUser").formValidator({
+                    onShow: "请选择集团客户",
+                    onFocus: "集团客户必须选择",
+                    onCorrect: "谢谢您的配合"
+                }).inputValidator({
+                    min: 1,
+                    onError: "你是不是忘记选择集团客户了!"
+                });
+                
+                $("#gronpPord").formValidator({
+                    onShow: "请选择集团产品",
+                    onFocus: "集团产品必须选择",
+                    onCorrect: "谢谢您的配合"
+                });
+				
+                $("#pageName").formValidator({
+                    onShow: "请输入认证页面名称",
+                    onFocus: "页面名称在5至10个字符",
+                    onCorrect: "谢谢您的配合"
+                });
+                
+				$("#attaType").change(function(){
+					$(this).attr("value")=="内嵌网页"? $("#multiMedia").hide():$("#multiMedia").show()
+				})
+            });
+            
+        </script>
+		
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/popWin.css" media="all" />
+        <title></title>
+    </head>
+    <body>
+    	<form action="#" name="form_1">
+    		
+    	<div class="rel GU_wrap spaceB10">
+					<label>集团客户</label>
+					<span class="GU_input inBlock"> </span>
+					<input type="hidden" value="" name="guest" id="groupUser" />
+					<div class="abs GU_box ">
+						<p class="GU_keyWork spaceL10 overflowDiv">
+						<label class="fLeft">集团客户</label>
+						<input type="text" class="GU_keyWork_input fLeft" /> 
+						<input type="submit" class='sBtn fLeft' value="搜索" /> 
+						<img id="GU_close" src="../skin/default/images/blank.gif">
+						</p>
+						<p class="GU_title title clear">
+						<span class="GU_title_sel">选择</span>
+						<span class="GU_title_name">集团客户</span>
+						<span class="GU_title_areaCode">地市区号</span>
+						<span class="GU_title_addre">联系地址</span></p>
+						<div class="GU_list">
+							<ul>
+								<li>
+								<input type="radio" name="GU_item" />
+								<span class="GU_title_name">1分公司</span>
+								<span class="GU_title_areaCode">020</span> 
+								<span class="GU_title_addre">中国移动广东分产品</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<span id="groupUserTip"></span>
+			</div>	
+			
+		<p class="clear"><label>集团产品</label><select id="gronpPord">
+			<option selected="selected">--请选择--</option>
+			<option>集团客户2集团客2222</option>
+			<option>集团客户2集团客333</option>
+		</select><span id="gronpPordTip"></span></p>
+		
+		<p><label>认证页面名称</label><input type="text" id="pageName" /><span id="pageNameTip" class="inBlock"></span></p>
+		<p><label>附件类型</label><select id="attaType">
+			<option selected="selected" value="附件" >附件</option>
+			<option value="内嵌网页">内嵌网页</option>
+		</select></p>
+		<p id="multiMedia"><label>多媒体地址</label><input type="text" /><input type="submit" class="sBtn" value="浏览" /></p>
+		<p><label>链接地址</label><input type="text" /></p>
+		
+		<p id="remarksP"><label>描述</label><textarea  rows="9" cols="32" id="remarks"></textarea><span id="remarksTip"></span></p>
+		<p class="aCenter">
+		<input type="submit" class="blueBtn bBtn spaceR10" value="保存" /><input type="button" class="blueBtn bBtn" onclick="hidepopWinFun(2,1);" value="取消" /></p>
+    	</form>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link type="text/css" rel="stylesheet" href="skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="skin/default/css/style.css" media="all" />
+		<script type="text/javascript">
+		function selectAll(ch){
+			$('input[name=did]').attr('checked',$(ch).attr('checked'));
+		}
+		</script>
+	</head>
+	<body>
+	<h2 id="title_right_m">业务字典管理</h2>
+				<s:form action="dict_list" theme="simple" name="f1">
+				<div class="left_r_m">
+					<h3 class="title">字典组</h3>
+					 <p class="spaceT10 spaceL10"><s:submit value="新增" cssClass="sBtn spaceL10" />
+					 <s:submit value="修改" cssClass="sBtn" />
+					 <s:submit value="删除" cssClass="sBtn" /></p>
+					 
+                     <div class="dictList">
+                     	
+                         <h4 class="title">字典组列表</h4>
+                         <ul class="spaceT10 spaceL10 treeList">
+                             <s:iterator value="dictGroups">
+                         		<li>
+                                 	<img src="skin/default/images/blank.gif" alt="" /><s:checkbox name="key" fieldValue="key"></s:checkbox><span><a href="<s:url action='dict_list'><s:param name='dictId' value='key' /><s:param name='init' value='init' /></s:url>"><s:property value="value" /></a></span>
+                             	</li>
+                         	</s:iterator>
+                         </ul>
+                     </div>
+				</div>
+				</s:form>
+				<s:form action="dict_list" theme="simple" name="f2">
+				<div class="right_r_m spaceT10">
+					<div class="blueBorder">
+					<h4 class="title">字典项</h4>
+					
+					<div id="dictListWrap"><div class="blueBorder formBox spaceT10">
+					<p class="paramsBox">
+					<label>字典项名称</label><s:textfield cssClass="spaceL10" name="dictItemName" />
+					<label>状态</label>
+					<s:set name="status" value="#{'1':'有效','0':'无效'}" />
+					<s:select list="#status" listKey="key" listValue="value" name="dictStatus" headerKey="-1" headerValue="--请选择--" />
+					</p>
+					<p class="btnBox">
+						<s:submit value="查询" cssClass="sBtn" method="dict_list" />
+						<input type="submit" value="新增" class="sBtn" />
+						<input type="submit" value="删除" class="sBtn" />
+						<input type="submit" value="启用" class="sBtn" />
+						<input type="submit" value="停用" class="sBtn" />
+					</p>
+				</div>
+					
+					
+					
+					
+					<table class="dataTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+				    <tr class="titleTR title">
+				        <th><input type="checkBox" /> 选择</th>
+				        <th><a href="#">字典项代码</a></th>
+				        <th>字典项名称</th>
+				        <th>排序</th>
+				        <th><a href="#">状态</a></th>
+				        <th>操作</th>
+				    </tr>
+				   <s:iterator value="dicts" id="dicts">
+						<tr>
+							<td><input type="checkbox" value="did" name="did"/></td>
+							<td><s:property value="dictItemId" /></td>
+							<td><s:property value="dictItemName" /></td>
+							<td><s:property value="rank" /></td>
+							<td><s:property value="dictStatus" /></td>
+							<td><a class="operaIcon operaIcon_edit" href="#">修改</a>　<a class="operaIcon operaIcon_del" href="#">删除</a></td>
+						</tr>
+					</s:iterator>
+				    
+					</table>
+	<p id="pageNav">共 25 条记录  每页显示 10 条  第 1/3 页 <a href="#">上一页</a> <a href="#">下一页</a>  <a href="#">首页</a> <a href="#">尾页</a> 转到 <input type="text" size="1" /> 页  <img class="pointer goPageBtn" src="../skin/default/images/go.png" /></p></div>
+				</div>
+				
+				</div></s:form>
+				</body>
+</html>		

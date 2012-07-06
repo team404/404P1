@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="skin/default/css/style.css" media="all" />
+		<title>wsop系统--登录入口</title>
+		<script language="javascript" type="text/javascript">
+			function goIndex(){
+				window.location.href= 'index.html';
+				window.event.returnValue = false;
+			}
+		</script>
+	</head>
+	<body id="loginBody">
+	<div id="loginDiv">
+		<p class="red aCenter hide">您输入的用户名或密码不正确，登录失败。</p>
+		<form action="#">
+			<p class="aCenter txtInput"><label class="inBlock aRight">用户名</label><span id="userInput"><input value="" type="text" /></span></p>
+			<p class="aCenter txtInput"><label class="inBlock aRight">密　码</label><span id="passInput"><input value="" type="text" /></span></p>
+			<p class="aCenter loginBtn"><input type="submit" class="pointer" onclick="goIndex();" value="登 录" /></p>
+		</form>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../lib/jquery/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="../skin/default/js/comm.js"></script>
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/reset.css" media="all" />
+		<link type="text/css" rel="stylesheet" href="../skin/default/css/style.css" media="all" />
+		
+		
+	</head>
+	<body>
+	<div class="right_r_m spaceT10">
+				<div class="blueBorder">
+					<h4 class="title">字典项</h4>
+					
+					<div id="dictListWrap"><div class="formBox spaceT10">
+					<p class="paramsBox">
+					<label>字典项名称</label><input type="text" value="" class="spaceL10" />
+					<label>状态</label><select class="spaceL10">
+						 <option selected="selected">--请选择--</option>
+						 <option>有效</option>
+						 <option>无效</option>
+					</select>
+					</p>
+					<p class="btnBox">
+						<input type="submit" value="查询" class="sBtn" />
+						<input type="submit" value="新增" onclick="popFun('system/addDictItem.html',this,'新增字典项',2,2)" class="sBtn" />
+						<input type="submit" value="删除" onclick="popFun('system/delDict.html',this,'确定删除选中的字典项',4,2)" class="sBtn" />
+					</p>
+				</div>
+					
+					
+					
+					<table class="dataTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+				    <tr class="titleTR title">
+				        <th onclick="selAllFun(this);"><input type="checkBox" /></th>
+				        <th><a href="#">字典项代码</a></th>
+				        <th>字典项名称</th>
+				        <th>排序</th>
+				        <th><a href="#">状态</a></th>
+				        <th>操作</th>
+				    </tr>
+				    <tr>
+				        <td><input type="checkBox" /></td>
+				        <td>集团客户管理</td>
+				        <td>pagea.xyz</td>
+				        <td>1</td>
+				        <td>有效</td>
+				        <td><a class="operaIcon operaIcon_edit" href="javascript:popFun('system/editDictItem.html',this,'修改字典项',2,2);">修改</a>　<a class="operaIcon operaIcon_del" href="javascript:popFun('system/delDict.html',this,'确定删除选中的字典项',4,2);">删除</a></td>
+				    </tr>
+					</table>
+	<p id="pageNav">共 25 条记录  每页显示 10 条  第 1/3 页 <a href="#">上一页</a> <a href="#">下一页</a>  <a href="#">首页</a> <a href="#">尾页</a> 转到 <input type="text" size="1" /> 页  <img class="pointer goPageBtn" src="../skin/default/images/go.png" /></p></div>
+	
+				</div>
+				</body>
+				
+</html>		
